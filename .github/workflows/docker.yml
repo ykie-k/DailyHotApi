@@ -40,7 +40,6 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            imsyy/dailyhot-api
             ghcr.io/${{ github.repository }}
 
       - name: Build and push regular image
