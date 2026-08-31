@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 
 ENV NODE_ENV=docker
 
@@ -8,7 +8,7 @@ RUN rm -rf /var/cache/apk/*
 # 构建阶段
 FROM base AS builder
 
-RUN npm install -g pnpm
+RUN npm install -g pnpm@10
 WORKDIR /app
 
 COPY package*json tsconfig.json pnpm-lock.yaml .env.example ./
